@@ -299,6 +299,25 @@ public class Users extends CRUD {
 		Application.show(questionId);
 
 	}
+	
+	/**
+	 * Likes/Dislikes a comment.
+	 * 
+	 * @param commentId
+	 * @param like boolean whether the user likes the comment or not
+	 */
+	public static void LikeComment(Long commentId, boolean like) {
+		
+		User user = User.find("byEmail", Secure.Security.connected()).first();
+		Comment comment = Comment.findById(commentId);
+		Question question = comment.findQuestion();
+
+		if (like = true)
+			comment.addLiker(user);
+		else
+			comment.removeLiker(user);
+		Application.show(question.id);
+	}
 
 	/**
 	 * My profile.
