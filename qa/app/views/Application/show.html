@@ -92,7 +92,7 @@
 								#{elseif user.isAbleToLikeComment(comment.id) && user.alreadyLikesComment(comment.id)}
 									<div class="comment-like">
 										<a class="button" href="@{Users.LikeComment(comment.id, false)}">Dislike</a>
-										${comment.countLikers()} person(s) like that.
+										${comment.countLikers()} people like this.
 									</div>
 								#{/elseif}
 							#{/secure.check}
@@ -192,7 +192,7 @@
 											#{elseif user.isAbleToLikeComment(comment.id) && user.alreadyLikesComment(comment.id)}
 												<div class="comment-like">
 													<a class="button" href="@{Users.LikeComment(comment.id, false)}">Dislike</a>
-													${comment.countLikers()} person(s) like that.
+													${comment.countLikers()} people like this.
 												</div>
 											#{/elseif}
 										#{/secure.check}
