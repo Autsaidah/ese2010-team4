@@ -311,8 +311,7 @@ public class Users extends CRUD {
 		User user = User.find("byEmail", Secure.Security.connected()).first();
 		Comment comment = Comment.findById(commentId);
 		Question question = comment.findQuestion();
-
-		if (like = true)
+		if (like)
 			comment.addLiker(user);
 		else
 			comment.removeLiker(user);

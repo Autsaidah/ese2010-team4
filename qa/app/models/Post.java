@@ -232,7 +232,9 @@ public abstract class Post extends Model {
 	 * @return true if the User was not already in the list.
 	 */
 	public boolean addLiker(User liker) {
-		return this.likers.add(liker);
+		boolean likes = this.likers.add(liker);
+		this.save();
+		return likes;
 	}
 
 	/**
@@ -244,7 +246,9 @@ public abstract class Post extends Model {
 	 * @return true if the list contained the User
 	 */
 	public boolean removeLiker(User disliker) {
-		return this.likers.remove(disliker);
+		boolean dislikes = this.likers.remove(disliker);
+		this.save();
+		return dislikes;
 	}
 
 	/**
